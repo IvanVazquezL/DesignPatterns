@@ -1,0 +1,8 @@
+Design Principle: Identify the aspects of your application that vary and separate them from what stays the same.
+Take what varies and “encapsulate” it so it won’t affect the rest of your code. The result? Fewer unintended consequences from code changes and more flexibility in your systems!
+
+Design Principle: Program to an interface, not an implementation.
+From now on, the Duck behaviors will live in a separate class—a class that implements a particular behavior interface. That way, the Duck classes won’t need to know any of the implementation details for their own behaviors
+
+Design Principle: Favor composition over inheritance.
+
