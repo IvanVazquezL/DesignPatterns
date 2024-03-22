@@ -21,6 +21,7 @@ public enum BeverageCost {
         int option = 1;
         for (BeverageCost beverage : values()) {
             System.out.println(option + ") " + beverage.name() + ": $" + beverage.getCost());
+            option++;
         }
     }
 }

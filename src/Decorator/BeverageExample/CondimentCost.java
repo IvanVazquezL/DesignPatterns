@@ -15,4 +15,13 @@ public enum CondimentCost {
     public double getCost() {
         return cost;
     }
+
+    public static void printMenu() {
+        System.out.println("Menu:");
+        int option = 1;
+        for (CondimentCost condiment : values()) {
+            System.out.println(option + ") " + condiment.name() + ": $" + condiment.getCost());
+            option++;
+        }
+    }
 }
