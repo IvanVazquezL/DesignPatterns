@@ -10,22 +10,47 @@ import Decorator.BeverageExample.ConcreteDecorators.Soy;
 import Decorator.BeverageExample.ConcreteDecorators.SteamedMilk;
 import Decorator.BeverageExample.ConcreteDecorators.Whip;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        BeverageCost.printMenu();
-        System.out.println("Select a coffee:");
-        String optionBeverage = scanner.nextLine();
+        System.out.println("How many beverages do you want?");
+        int numberOfBeverages = Integer.parseInt(scanner.nextLine());
+        List<Beverage> beverages = new ArrayList<>();
 
-        Beverage beverage = getBeverageByOption(optionBeverage);
-        CondimentCost.printMenu();
-        String optionCondiment = scanner.nextLine();
-        Beverage beverageWithCondiment = addCondimentToBeverage(beverage, optionCondiment);
+        for(int i = 0; i < numberOfBeverages; i++) {
+            BeverageCost.printMenu();
+            System.out.println("Select a coffee:");
+            String optionBeverage = scanner.nextLine();
+            Beverage beverage = getBeverageByOption(optionBeverage);
 
-        System.out.println(beverageWithCondiment.getDescription());
-        System.out.println(beverageWithCondiment.cost());
+            CondimentCost.printMenu();
+            String optionCondiment = scanner.nextLine();
+            List<String> listOfCondiments = new ArrayList<>(Arrays.asList(optionCondiment.split(" ")));
+            Beverage beverageWithCondiments = beverage;
+
+            for (String condiment : listOfCondiments) {
+                beverageWithCondiments = addCondimentToBeverage(beverageWithCondiments, condiment);
+            }
+
+            beverages.add(beverageWithCondiments);
+        }
+
+        double total = 0;
+
+        for (Beverage beverage : beverages) {
+            System.out.println(beverage.getDescription() + " $ " + beverage.cost());
+            total+= beverage.cost();
+        }
+
+        System.out.println("Total: $ " + total);
+
+
+
     }
 
     public static Beverage getBeverageByOption(String option) {
