@@ -6,3 +6,6 @@ From now on, the Duck behaviors will live in a separate class—a class that imp
 
 Design Principle: Favor composition over inheritance.
 
+Design Principle: Strive for loosely coupled designs between objects that interact.
+Loosely coupled designs allow us to build flexible OO systems that can handle change because they minimize the interdependency between objects.
+
