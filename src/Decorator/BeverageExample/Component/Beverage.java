@@ -11,10 +11,6 @@ public abstract class Beverage {
         return description;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
     public abstract void setSize(Size size);
 
     public abstract void setDescription();

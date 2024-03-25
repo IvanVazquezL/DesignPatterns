@@ -5,13 +5,13 @@ import Decorator.BeverageExample.Component.Beverage;
 import Decorator.BeverageExample.Size;
 
 public class Decaf extends Beverage {
-    public Decaf() {
-        setDescription();
+    public Decaf(Size size) {
+        setSize(size);
     }
 
     @Override
     public void setDescription() {
-        description = BeverageCost.DECAF.getName() + " " + this.size.name();
+        description = BeverageCost.DECAF.getName() + " " + this.size.getSize();
     }
 
     @Override

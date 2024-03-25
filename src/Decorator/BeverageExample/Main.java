@@ -56,13 +56,43 @@ public class Main {
     public static Beverage getBeverageByOption(String option) {
         switch (option) {
             case "1":
-                return new Espresso();
             case "2":
-                return new HouseBlend();
             case "3":
-                return new Decaf();
+                return new Espresso(getBeverageSize(option));
             case "4":
-                return new DarkRoast();
+            case "5":
+            case "6":
+                return new HouseBlend(getBeverageSize(option));
+            case "7":
+            case "8":
+            case "9":
+                return new Decaf(getBeverageSize(option));
+            case "10":
+            case "11":
+            case "12":
+                return new DarkRoast(getBeverageSize(option));
+            default:
+                return null;
+        }
+    }
+
+    public static Size getBeverageSize(String option) {
+        switch(option) {
+            case "1":
+            case "4":
+            case "7":
+            case "10":
+                return Size.SMALL;
+            case "2":
+            case "5":
+            case "8":
+            case "11":
+                return Size.MEDIUM;
+            case "3":
+            case "6":
+            case "9":
+            case "12":
+                return Size.LARGE;
             default:
                 return null;
         }
@@ -71,15 +101,45 @@ public class Main {
     public static Beverage addCondimentToBeverage(Beverage beverage, String option) {
         switch(option) {
             case "1":
-                return new SteamedMilk(beverage);
             case "2":
-                return new Mocha(beverage);
             case "3":
-                return new Soy(beverage);
+                return new SteamedMilk(beverage, getCondimentSize(option));
             case "4":
-                return new Whip(beverage);
+            case "5":
+            case "6":
+                return new Mocha(beverage, getCondimentSize(option));
+            case "7":
+            case "8":
+            case "9":
+                return new Soy(beverage, getCondimentSize(option));
+            case "10":
+            case "11":
+            case "12":
+                return new Whip(beverage, getCondimentSize(option));
         }
 
         return null;
+    }
+
+    public static Size getCondimentSize(String option) {
+        switch(option) {
+            case "1":
+            case "4":
+            case "7":
+            case "10":
+                return Size.SMALL;
+            case "2":
+            case "5":
+            case "8":
+            case "11":
+                return Size.MEDIUM;
+            case "3":
+            case "6":
+            case "9":
+            case "12":
+                return Size.LARGE;
+            default:
+                return null;
+        }
     }
 }

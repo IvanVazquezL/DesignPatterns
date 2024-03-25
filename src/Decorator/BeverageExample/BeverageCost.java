@@ -38,13 +38,13 @@ public enum BeverageCost {
         System.out.println("Menu:");
         int option = 1;
         for (BeverageCost beverage : values()) {
-            System.out.println(option + ") " + beverage.name() + " Small: $" + beverage.getSmallPrice());
+            System.out.println(option + ") " + beverage.getName() + " Small: $" + beverage.getSmallPrice());
             option++;
 
-            System.out.println(option + ") " + beverage.name() + " Medium: $" + beverage.getMediumPrice());
+            System.out.println(option + ") " + beverage.getName() + " Medium: $" + beverage.getMediumPrice());
             option++;
 
-            System.out.println(option + ") " + beverage.name() + " Large: $" + beverage.getLargePrice());
+            System.out.println(option + ") " + beverage.getName() + " Large: $" + beverage.getLargePrice());
             option++;
         }
     }

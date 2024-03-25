@@ -7,6 +7,10 @@ public enum Size {
 
     private final String size;
 
+    public String getSize() {
+        return size;
+    }
+
     Size(String size) {
         this.size = size;
     }

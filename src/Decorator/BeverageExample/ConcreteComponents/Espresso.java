@@ -5,13 +5,13 @@ import Decorator.BeverageExample.BeverageCost;
 import Decorator.BeverageExample.Size;
 
 public class Espresso extends Beverage {
-    public Espresso() {
-        setDescription();
+    public Espresso(Size size) {
+        setSize(size);
     }
 
     @Override
     public void setDescription() {
-        description = BeverageCost.ESPRESSO.getName() + " " + this.size.name();
+        description = BeverageCost.ESPRESSO.getName() + " " + this.size.getSize();
     }
 
     @Override

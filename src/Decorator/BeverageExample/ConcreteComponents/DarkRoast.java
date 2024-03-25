@@ -5,13 +5,13 @@ import Decorator.BeverageExample.Component.Beverage;
 import Decorator.BeverageExample.Size;
 
 public class DarkRoast extends Beverage {
-    public DarkRoast() {
-        setDescription();
+    public DarkRoast(Size size) {
+        setSize(size);
     }
 
     @Override
     public void setDescription() {
-        description = BeverageCost.DARK_ROAST.getName() + " " + this.size.name();
+        description = BeverageCost.DARK_ROAST.getName() + " " + this.size.getSize();
     }
 
     @Override

@@ -5,8 +5,8 @@ import Decorator.BeverageExample.BeverageCost;
 import Decorator.BeverageExample.Size;
 
 public class HouseBlend extends Beverage {
-    public HouseBlend() {
-        setDescription();
+    public HouseBlend(Size size) {
+        setSize(size);
     }
 
     @Override
@@ -17,7 +17,7 @@ public class HouseBlend extends Beverage {
 
     @Override
     public void setDescription() {
-        description = BeverageCost.HOUSE_BLEND.getName() + " " + this.size.name();
+        description = BeverageCost.HOUSE_BLEND.getName() + " " + this.size.getSize();
     }
     @Override
     public double cost() {
